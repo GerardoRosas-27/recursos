@@ -1,0 +1,84 @@
+---------codigo git----------
+git log --oneline --decorate --all --graph
+
+git init
+git status
+git add . 
+git commit -m "mensaje"
+git remote add origin repoRemoto //agregar a repo remoto
+git push //subir cambios
+git pull //bajar cambios
+
+git diff //visualizar cambios 
+-----para ver los commit realizados
+git log
+
+---- ver commits hechos 
+git log --oneline | cat
+
+------ para regresar un en el tiempo y meter archivos en el ultimo commit
+git add . 
+git commit --amend
+
+--- Restablecer cambios de un archivo cuando no este agregado
+git checkout -- nombre archivo
+
+---- Restablecer sacar los archivos que ya estan agregados 
+git reset HEAD nombre archivo
+
+--- desacer commits::::comando no recomendado por que es destructivo
+git reset --soft claveCommit
+
+------- Revertir un commit------------------
+---primero visualizar cambios
+opcion 1::: git diff claveCommit claveCommit
+opcion 2:: git dif HEAD~1 HEAD ///HEAD commit actual (~1 = un commit anterior ,~2 dos commit anteriores)
+ 
+opcion 1: // --no-commit para evitar hacer un nuevo commit por cada revert
+git revert --no-commit HEAD  //ultimo commit
+git revert --no-commit HEAD~1 //un commit anterior
+git revert --no-commit HEAD~2 //dos commits anteriores
+opcion 2:
+git revert --no-commit claveCommit
+
+una ves elegido todos los commits que quiero revertir para continuar:
+git rever --continue
+
+-------fin revertir commits----------------
+
+--------Trabajar Ramas -----
+----visualizar:
+git branch -a
+----crear:
+git branch nombreRama
+----seleccionar
+git checkout nombreRama
+----selecionar y crear
+git checkout -b nombreRama
+----cambiar nombre de Rama
+git branch -m nombreAnterior nombreNuevo
+--- eliminar Rama
+git branch -d nombreRama
+------Fucionar rama con otra
+git checkout ramaDestino
+git merge rama  // a fucionar con la de destino
+git merge --abort
+
+
+-----ALIAS
+-----ver alias creados
+git veralias "git config --global --get-regexp alias"
+---crear alias
+git config --global alias.nombreAlias 'comando' eje://'config --global --get-regexp alias'
+---eliminar alias
+git config --global --unset alias.nombreAliasEliminar
+
+
+-------TAG
+git tag nombre claveCommit //ejemplo "v0.1.2" sirve para señalar verciones en los commits
+
+numero de maye: 7471834736
+ 
+
+
+
