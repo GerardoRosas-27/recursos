@@ -76,6 +76,10 @@ git config --global --unset alias.nombreAliasEliminar
 
 -------TAG
 git tag nombre claveCommit //ejemplo "v0.1.2" sirve para señalar verciones en los commits
+--------ver repo remoto 
+  git remote -v
+-------Cambiar repo remoto
+ git remote set-url origin https://Gerardo28@bitbucket.org/Gerardo28/hammertoolsweb2.git
 
 numero de maye: 7471834736
  
